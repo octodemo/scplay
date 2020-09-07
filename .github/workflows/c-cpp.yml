@@ -15,10 +15,19 @@ jobs:
         sudo apt-get update
         sudo apt-get install -qq qt5-default qtmultimedia5-dev qtscript5-dev qttools5-dev
       
+      
+    - name: Setup CodeQL
+      uses: github/codeql-action/init@v1
+      
     - name: qmake
       run: |
         qmake scplay.pro
         
     - name: make
       run: make
+      
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+      with:
+        output: ./sarif
       
