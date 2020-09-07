@@ -14,10 +14,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -qq qt5-default
-        qmake --version
-        
-    - name: qmake
-      run: qmake
       
     - name: make
       run: make
