@@ -12,10 +12,8 @@ jobs:
       
     - name: Install tools
       run: |
-        sudo apt-add-repository -y ppa:beineri/opt-qt521
-        sudo apt-get update -qq
-        sudo apt-get install -qq qt52-meta-full
-        ls -lhR /opt/qt52
+        sudo apt-get install -qq qt5-default
+        qmake --version
         
     - name: qmake
       run: qmake
