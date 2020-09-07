@@ -15,6 +15,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install -qq qt5-default
       
+    - name: qmake
+      run: |
+        qmake scplay.pro
+        
     - name: make
       run: make
       
